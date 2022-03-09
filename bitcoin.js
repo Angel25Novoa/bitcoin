@@ -5,8 +5,8 @@ fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
     .then(response => response.json())
     .then(data => displayData(data));
 
-const displayData = data => {
-    const usd= data.bpi.USD.rate_float;
+const displayData = (data) => {
+    const usd = data.bpi.USD.rate_float;
     usdAmount.textContent = `$${usd} USD`;
     const totalDollarItems = Math.trunc(usd / 1000);
     for(let i = 0; i < totalDollarItems; i++) {
